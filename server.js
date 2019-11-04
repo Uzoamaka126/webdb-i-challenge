@@ -1,6 +1,5 @@
 const express = require('express');
 
-const db = require('./data/dbConfig.js');
 
 const AccountRouter = require('./data/posts/post-router');
 
