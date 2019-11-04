@@ -58,5 +58,18 @@ router.put('/:id', (req, res) => {
             message: 'Something went wrong' + error.message
         })
     })
+});
+
+router.delete('/:id', (req, res) => {
+    db('accounts').where({ id: req.params.id })
+    .del()
+    .then(updatedRows => {
+        res.json(updatedRows + ' rows got deleted');
+    })
+    .catch(error => {
+        res.status(500).json({
+            message: 'something went wrong' + error.message
+        })
+    })
 })
 module.exports = router;
